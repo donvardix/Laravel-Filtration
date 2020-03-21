@@ -11,7 +11,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Hello, world!</title>
+    <title>{{ $title }}</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

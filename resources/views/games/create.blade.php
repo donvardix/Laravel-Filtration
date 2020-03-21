@@ -1,4 +1,4 @@
-@extends('games.layouts.layout')
+@extends('games.layouts.layout', ['title'=>'Добавить'])
 @section('content')
     <form action="{{ route('games.store') }}" method="post">
         @csrf

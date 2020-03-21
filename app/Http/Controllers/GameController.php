@@ -12,7 +12,7 @@ class GameController extends Controller
         if ($request->has('search')) {
             $games = Game::where('name', 'like', "%$request->search%")->get();
         } else {
-            $games = Game::all();
+            $games = Game::orderBy('name', 'asc')->get();
         }
 
         return view('games.index', compact('games', 'request'));
@@ -27,7 +27,16 @@ class GameController extends Controller
     {
         Game::create([
             'name'=>$request->name,
-            'steam'=>[$request->steam, $request->noteSteam],
+            'steam'=>$request->steam,
+            'steam_info'=>$request->noteSteam,
+            'origin'=>$request->origin,
+            'origin_info'=>$request->noteOrigin,
+            'uplay'=>$request->uplay,
+            'uplay_info'=>$request->noteUPlay,
+            'epicgames'=>$request->epicGames,
+            'epicgames_info'=>$request->noteEpicGames,
+            'gog'=>$request->gog,
+            'gog_info'=>$request->noteGog
         ]);
         return redirect(route('games.create'));
     }

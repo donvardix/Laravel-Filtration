@@ -7,14 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Game extends Model
 {
     protected $fillable = [
-        'name', 'steam', 'origin', 'uplay', 'epicgames', 'gog'
-    ];
-
-    protected $casts = [
-        'steam' => 'array',
-        'origin' => 'array',
-        'uplay' => 'array',
-        'epicgames' => 'array',
-        'gog' => 'array',
+        'name',
+        'steam',
+        'steam_info',
+        'origin',
+        'origin_info',
+        'uplay',
+        'uplay_info',
+        'epicgames',
+        'epicgames_info',
+        'gog',
+        'gog_info'
     ];
 }
